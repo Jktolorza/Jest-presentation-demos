@@ -1,0 +1,23 @@
+{
+  "name": "jest-ci-cd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jktolorza/jest-CI-CD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jktolorza/jest-CI-CD/issues"
+  },
+  "homepage": "https://github.com/Jktolorza/jest-CI-CD#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
