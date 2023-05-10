@@ -18,8 +18,7 @@ jobs:
         run: npm run test:cov 
       - name: Verify Coverage
         run: |
-          npm install -g jest-coverage-badges
-          COVERAGE=$(jest-coverage-badges | awk '{print $1}' | tr -d '%')
+          COVERAGE=$(node -pe "JSON.parse(require('fs').readFileSync('./coverage/coverage-summary.json')).total.lines.pct")
           if [ "$COVERAGE" -lt "80" ]; then
             echo "Coverage below threshold ($COVERAGE%), failing build."
             exit 1
