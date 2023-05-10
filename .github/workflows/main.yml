@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Tests
-        run: npm ci && npm test
+        run: npm ci && npm run test
       - name: Coverage
         run: npm run test:cov
