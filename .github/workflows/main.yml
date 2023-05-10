@@ -15,4 +15,4 @@ jobs:
       - name: Run Tests
         run: npm ci && npm test
       - name: Coverage
-        run: npm run test:cov 
+        run: npm run test:cov
