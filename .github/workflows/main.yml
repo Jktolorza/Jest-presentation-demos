@@ -16,3 +16,15 @@ jobs:
         run: npm ci && npm test
       - name: Coverage
         run: npm run test:cov 
+      - name: Verify Coverage
+        run: |
+          npm install -g jest-coverage-badges
+          COVERAGE=$(jest-coverage-badges | awk '{print $1}' | tr -d '%')
+          if [ "$COVERAGE" -lt "80" ]; then
+            echo "Coverage below threshold ($COVERAGE%), failing build."
+            exit 1
+          fi
+      - name: Commit Coverage
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Coverage: $COVERAGE%"
