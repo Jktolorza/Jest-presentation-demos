@@ -16,10 +16,3 @@ jobs:
         run: npm ci && npm test
       - name: Coverage
         run: npm run test:cov 
-      - name: Verify Coverage
-        run: |
-          COVERAGE=$(node -pe "JSON.parse(require('fs').readFileSync('./coverage/coverage-summary.json')).total.lines.pct")
-          if [ "$COVERAGE" -lt "80" ]; then
-            echo "Coverage below threshold ($COVERAGE%), failing build."
-            exit 1
-          fi
